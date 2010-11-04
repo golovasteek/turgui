@@ -26,13 +26,17 @@ void WordsList::findGeneral()
     }
     QVector<int> offsets;
     int length = maxCommonSubstring(words, offsets);
-    QMessageBox::information(0, "length", QString::number(length));
+    int words_ind = 0;
     for (int i = 0; i < rowCount(); ++i)
     {
         curItem = item(i, 0);
         if (curItem != 0 && !curItem->text().isEmpty())
         {
-            ;
+            setItem(i, 1, new QTableWidgetItem(words[words_ind].left(offsets[words_ind])));
+            setItem(i, 2, new QTableWidgetItem(words[words_ind].mid(offsets[words_ind], length)));
+            setItem(i, 3, new QTableWidgetItem(
+                words[words_ind].right(words[words_ind].size() - offsets[words_ind] - length)));
+            words_ind++;
         }
     }
 }
@@ -42,5 +46,9 @@ void WordsList::onCellChanged(int row, int collumn)
     if(row == rowCount() - 1)
     {
         setRowCount(rowCount() + 1);
+    }
+    if(collumn == 0)
+    {
+        findGeneral();
     }
 }

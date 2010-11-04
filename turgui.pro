@@ -4,7 +4,9 @@
 TARGET = turgui
 TEMPLATE = app
 SOURCES += main.cpp \
-    wordslist.cpp
+    wordslist.cpp \
+    forminfo.cpp
 HEADERS += algo.h \
-    wordslist.h
+    wordslist.h \
+    forminfo.h
 FORMS += 

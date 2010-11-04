@@ -1,7 +1,7 @@
 #ifndef ALGO_H
 #define ALGO_H
 
-inline int maxCommonSubstring(const QVector<QString>& words, QVector<int> offsets)
+inline int maxCommonSubstring(const QVector<QString>& words, QVector<int>& offsets)
 {
     offsets.resize(words.size());
     for (offsets[0] = 0; offsets[0] < words[0].size(); ++offsets[0])
@@ -11,7 +11,8 @@ inline int maxCommonSubstring(const QVector<QString>& words, QVector<int> offset
             QString curSub = words[0].mid(offsets[0], length);
             for (int w = 1; w < words.size(); ++w)
             {
-                if (words[w].indexOf(curSub) == -1)
+                offsets[w] = words[w].indexOf(curSub);
+                if (offsets[w] == -1)
                 {
                     break;
                 }
