@@ -3,6 +3,10 @@
 
 inline int maxCommonSubstring(const QVector<QString>& words, QVector<int>& offsets)
 {
+    if (words.empty())
+    {
+        return 0;
+    }
     offsets.resize(words.size());
     for (offsets[0] = 0; offsets[0] < words[0].size(); ++offsets[0])
     {

@@ -1,5 +1,5 @@
 #include "forminfo.h"
 
-FormInfo::FormInfo()
+CFormInfo::CFormInfo()
 {
 }

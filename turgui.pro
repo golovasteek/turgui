@@ -4,9 +4,20 @@
 TARGET = turgui
 TEMPLATE = app
 SOURCES += main.cpp \
-    wordslist.cpp \
-    forminfo.cpp
+    forminfo.cpp \
+    paradigminfo.cpp \
+    paradigmview.cpp \
+    lemloader.cpp \
+    lemsview.cpp \
+    turgwidget.cpp \
+    paradigmsloader.cpp
 HEADERS += algo.h \
-    wordslist.h \
-    forminfo.h
+    forminfo.h \
+    paradigminfo.h \
+    paradigmview.h \
+    lemloader.h \
+    lemsview.h \
+    turgwidget.h \
+    paradigmsloader.h
 FORMS += 
+QT += xml
