@@ -23,14 +23,17 @@ public:
     void SetPrefix(const QString& _prefix) { prefix = _prefix; }
     QString Suffix() const { return suffix; }
     void SetSuffix(const QString& _suffix) { suffix = _suffix; }
-    qint64 Grammem() const {return grammem;}
-    void SetGrammem(qint64 _grammem) {grammem = _grammem;}
+    qint64 Grammem() const { return grammem; }
+    void SetGrammem(qint64 _grammem) { grammem = _grammem; }
+    int PartOfSpeech() const { return partOfSpeech;}
+    void setPartOfSpeech(int _partOfSpeech) { partOfSpeech = _partOfSpeech; }
 
 private:
     TCase caseVal;
     QString prefix;
     QString suffix;
     qint64 grammem;
+    int partOfSpeech;
 };
 
 #endif // FORMINFO_H

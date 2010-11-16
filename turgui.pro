@@ -10,7 +10,8 @@ SOURCES += main.cpp \
     lemloader.cpp \
     lemsview.cpp \
     turgwidget.cpp \
-    paradigmsloader.cpp
+    paradigmsloader.cpp \
+    gramtab.cpp
 HEADERS += algo.h \
     forminfo.h \
     paradigminfo.h \
@@ -18,6 +19,7 @@ HEADERS += algo.h \
     lemloader.h \
     lemsview.h \
     turgwidget.h \
-    paradigmsloader.h
+    paradigmsloader.h \
+    gramtab.h
 FORMS += 
 QT += xml
