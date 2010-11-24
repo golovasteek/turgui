@@ -12,7 +12,7 @@ CTurgWidget::CTurgWidget(QWidget *parent) :
     layout.addWidget(&paradigm, 3);
     setLayout(&layout);
 
-    connect(&lems, SIGNAL(itemActivated(QListWidgetItem*)), this, SLOT(onLemSelected(QListWidgetItem*)));
+    connect(&lems, SIGNAL(activated(QModelIndex)), this, SLOT(onLemSelected(QModelIndex)));
 }
 
 void CTurgWidget::LoadFromFile()
@@ -59,8 +59,9 @@ void CTurgWidget::LoadFromFile()
     lems.LoadFromFile(lemsFileName, paradigms);
 }
 
-void CTurgWidget::onLemSelected(QListWidgetItem* item)
+void CTurgWidget::onLemSelected(const QModelIndex& index)
 {
-    paradigm.SetLem(item->text());
-    paradigm.SetParadigm(paradigms[lems.GetParadigm(item)]);
+    paradigm.SetLem(lems.GetLem(index));
+    paradigm.SetParadigm(paradigms[lems.GetParadigm(index)]);
 }
+

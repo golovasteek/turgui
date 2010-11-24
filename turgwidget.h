@@ -20,7 +20,7 @@ signals:
 
 public slots:
     void LoadFromFile();
-    void onLemSelected(QListWidgetItem* item);
+    void onLemSelected(const QModelIndex& index);
 
 private:
     CLemsView lems;
